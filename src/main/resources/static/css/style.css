@@ -1,0 +1,23 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    padding: 50px 100px;
+    width: 100%;
+    display: flex;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo img{
+    width: 80px;
+}
+
+.logo h3{
+    font-family: 'Patrick Hand', cursive;
+}
