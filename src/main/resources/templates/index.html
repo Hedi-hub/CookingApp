@@ -6,6 +6,7 @@ thymeleaf to make dynamic ***always has to be here***-->
 <head th:replace="fragments/header :: head">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     <title>Cooking Guide App</title>
 </head>
 
@@ -15,7 +16,23 @@ thymeleaf to make dynamic ***always has to be here***-->
             <img th:src="@{images/hand-holding-up-a-cooking-palette.png}">
             <h3>Be Your Chef</h3>
         </div>
+
+
+        <div class="navBar">
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
     </header>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" name="search" placeholder="What are you looking for?" id="search">
+            <button id="search?"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
     <!--class is like an ID-->
     <div class="container">
 

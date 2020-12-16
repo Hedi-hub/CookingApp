@@ -4,9 +4,12 @@ body{
 }
 
 header{
-    padding: 50px 100px;
-    width: 100%;
+   /* padding: 50px 100px;*/
+    padding:50px;
+    width: 70%;
     display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 .logo{
@@ -16,8 +19,39 @@ header{
 
 .logo img{
     width: 80px;
+    color: #f6ae2d;
 }
 
 .logo h3{
     font-family: 'Patrick Hand', cursive;
+}
+
+.navBar div{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+.navBar{
+    float: right;
+}
+
+.search-container{
+    padding:50px;
+    width: 70%;
+    margin: 20px auto; /*top and bottom right and left*/
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.search-box{
+    width: 97%;
+    height: 40px;
+
+}
+.search-box button{
+    background-color: #ff9f1c;
+    width: 3%;
 }
