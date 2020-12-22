@@ -3,55 +3,83 @@ body{
     margin: 0;
 }
 
-header{
-   /* padding: 50px 100px;*/
-    padding:50px;
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-}
-
-.logo{
+.header-container{
     display: flex;
     flex-direction: row;
+    width: 70%;
+    background-color: #fff;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
-.logo img{
+.h-logo{
+    width: 25%;
+    display: flex;
+    background-color: #fff;
+    /* margin 10px is ok? */
+    margin: 10px;
+
+
+}
+
+.h-logo img{
     width: 80px;
-    color: #f6ae2d;
+
 }
 
-.logo h3{
+.h-logo h3{
+    padding-left: 10px;
     font-family: 'Patrick Hand', cursive;
-}
-
-.navBar div{
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-}
-.navBar{
-    float: right;
+    font-size:20px;
 }
 
 .search-container{
-    padding:50px;
-    width: 70%;
-    margin: 20px auto; /*top and bottom right and left*/
+    width: 50%;
+    padding: 20px;
+    padding-left: 60%;
     display: flex;
     flex-direction: row;
+    background-color: #fff;
 
+}
+
+.search-container button{
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
 
 }
 
-.search-box{
-    width: 97%;
-    height: 40px;
+.search-container button:hover {
+    background: #ff9f1c;
+}
+
+.search-container input[type=text] {
+    /* the size of the search input? */
+    width: 50%;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
 
 }
-.search-box button{
-    background-color: #ff9f1c;
-    width: 3%;
+.search-container input[type=text] {
+    border: 1px solid #ccc;
+}
+
+
+
+.reg-button{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color:#aaaaaa ;
+    font-size: 50px;
+    border: none;
+    margin: 15px;
 }

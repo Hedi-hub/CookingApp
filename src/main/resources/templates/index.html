@@ -9,38 +9,40 @@ thymeleaf to make dynamic ***always has to be here***-->
     <link href="/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     <title>Cooking Guide App</title>
 </head>
-
-    <body>
-    <header>
-        <div class="logo">
-            <img th:src="@{images/hand-holding-up-a-cooking-palette.png}">
-            <h3>Be Your Chef</h3>
-        </div>
-
-
-        <div class="navBar">
-        <div></div>
-        <div></div>
-        <div></div>
-        </div>
-
-    </header>
-
+<body>
+<header class="header-container">
+    <div class="h-logo">
+        <img th:src="@{images/cooking-pot.png}">
+        <h3>HAPPYPOT</h3>
+    </div>
+    <!-- add form wrap -->
     <div class="search-container">
-        <div class="search-box">
-            <input type="text" name="search" placeholder="What are you looking for?" id="search">
-            <button id="search?"><i class="fas fa-search"></i></button>
-        </div>
+        <form action="/home">
+            <input type="text" placeholder="ex. carrot, chicken, ..." name="search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
 
-    <!--class is like an ID-->
-    <div class="container">
-
-
+    <div>
+        <form action="/signin"></form>
+        <button type="submit" class="reg-button">
+            <i class="fas fa-user"></i>
+        </button>
+        </form>
     </div>
-    <footer>
 
-    </footer>
+
+</header>
+
+
+<!--class is like an ID-->
+<div class="container">
+
+
+</div>
+<footer>
+
+</footer>
 
 </body>
 </html>
