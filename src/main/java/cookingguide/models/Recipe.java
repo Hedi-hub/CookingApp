@@ -15,7 +15,7 @@ public class Recipe {
     private String name;
     @Column(name="ingredient")
     private ArrayList<Ingredient> ingredients;
-    @@Column(name="portion")
+    @Column(name="portion")
     private int portion;
     @Column(name="origin_description")
     private String originDescription;
@@ -23,7 +23,7 @@ public class Recipe {
     public Recipe(){}
     public Recipe(String name, int portion, String originDescription) {
         this.name = name;
-        this.ingredients = new ArrayList<String>();
+        this.ingredients = new ArrayList<Ingredient>();
         this.portion = portion;
         this.originDescription = originDescription;
     }
@@ -40,11 +40,11 @@ public class Recipe {
         this.name = name;
     }
 
-    public ArrayList<String> getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 

@@ -15,7 +15,7 @@ public class Ingredient {
     private String IngredientName;
     @Column(name="calories")
     private int calories;
-    @@Column(name="amount")
+    @Column(name="amount")
     private int amount;
     @Column(name="unit_measurement")
     private UnitOfMeasurements unitOfMeasurements;

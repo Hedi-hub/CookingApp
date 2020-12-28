@@ -20,6 +20,7 @@ public class InitialData {
     //add the @PostConstruct
     @PostConstruct
     public void initializedInfo(){
+        Recipe recipe1 = new Recipe()
 
     }
 

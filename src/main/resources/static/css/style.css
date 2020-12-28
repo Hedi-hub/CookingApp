@@ -3,83 +3,86 @@ body{
     margin: 0;
 }
 
-.header-container{
+.header-wrap {
+    -webkit-box-shadow: 0 8px 6px -6px #808080;
+    -moz-box-shadow: 0 8px 6px -6px #808080;
+    box-shadow: 0 8px 6px -6px #808080;
+    padding-bottom: 10px;
+}
+
+header {
     display: flex;
     flex-direction: row;
-    width: 70%;
-    background-color: #fff;
-    margin: 0 auto;
     justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
 }
 
-.h-logo{
-    width: 25%;
-    display: flex;
-    background-color: #fff;
-    /* margin 10px is ok? */
-    margin: 10px;
-
-
+.pot-logo {
+    font-family: "Patrick Hand", cursive;
+    font-size: 20px;
+    padding-top: 20px;
 }
 
-.h-logo img{
+.logo-wrap img {
     width: 80px;
-
+    margin-right: 20px;
 }
 
-.h-logo h3{
-    padding-left: 10px;
-    font-family: 'Patrick Hand', cursive;
-    font-size:20px;
-}
-
-.search-container{
-    width: 50%;
-    padding: 20px;
-    padding-left: 60%;
+.logo-wrap {
+    width: 30%;
     display: flex;
     flex-direction: row;
-    background-color: #fff;
-
 }
 
-.search-container button{
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
+.search-wrap {
+    width: 60%;
+    padding-top: 20px;
+}
+
+.register-wrap {
+    padding-top: 20px;
+    width: 10%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #bbb9b9;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-wrap form {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-button {
+    align-items: center;
+    background-color: #e68a00;
+    border: 0;
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    padding: 0;
+    width: 48px;
+}
+
+.reg-button {
+    width: 10%;
+    background-color: #fff;
+    color: #aaaaaa;
+    font-size: 40px;
     border: none;
+    margin-left: 0;
+}
+.reg-button:hover,
+.search-button:hover {
     cursor: pointer;
-
-}
-
-.search-container button:hover {
-    background: #ff9f1c;
-}
-
-.search-container input[type=text] {
-    /* the size of the search input? */
-    width: 50%;
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-
-}
-.search-container input[type=text] {
-    border: 1px solid #ccc;
-}
-
-
-
-.reg-button{
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    background-color: #fff;
-    color:#aaaaaa ;
-    font-size: 50px;
-    border: none;
-    margin: 15px;
 }

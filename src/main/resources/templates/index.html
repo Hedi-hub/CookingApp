@@ -9,30 +9,33 @@ thymeleaf to make dynamic ***always has to be here***-->
     <link href="/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     <title>Cooking Guide App</title>
 </head>
+
 <body>
-<header class="header-container">
-    <div class="h-logo">
-        <img th:src="@{images/cooking-pot.png}">
-        <h3>HAPPYPOT</h3>
-    </div>
-    <!-- add form wrap -->
-    <div class="search-container">
-        <form action="/home">
-            <input type="text" placeholder="ex. carrot, chicken, ..." name="search">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-    </div>
+<div class="header-wrap">
+    <header>
+        <div class="logo-wrap">
+            <img src="images/cooking-pot.png" />
+            <div class="pot-logo">HAPPY POT</div>
+        </div>
 
-    <div>
-        <form action="/signin"></form>
-        <button type="submit" class="reg-button">
-            <i class="fas fa-user"></i>
-        </button>
-        </form>
-    </div>
+        <div class="search-wrap">
+            <form action="">
+                <input type="text" class="search-bar" placeholder="z.B. Pfankuchen, Lasagne"/>
+                <button class="search-button" type="submit">
+                    <i class="fas fa-search" hedibitter></i>
+                </button>
+            </form>
+        </div>
 
-
-</header>
+        <div class="register-wrap">
+            <form action="/signin"></form>
+            <button type="submit" class="reg-button">
+                <i class="fas fa-user"></i>
+            </button>
+            </form>
+        </div>
+    </header>
+</div>
 
 
 <!--class is like an ID-->
