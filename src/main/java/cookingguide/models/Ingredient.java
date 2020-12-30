@@ -13,16 +13,14 @@ public class Ingredient {
 
     @Column(name="ingredient_name")
     private String IngredientName;
-    @Column(name="calories")
-    private int calories;
     @Column(name="amount")
-    private int amount;
+    private double amount;
     @Column(name="unit_measurement")
     private UnitOfMeasurements unitOfMeasurements;
 
-    public Ingredient(String ingredientName, int calories, int amount, UnitOfMeasurements unitOfMeasurements) {
+    public Ingredient(){}
+    public Ingredient(String ingredientName, double amount, UnitOfMeasurements unitOfMeasurements) {
         IngredientName = ingredientName;
-        this.calories = calories;
         this.amount = amount;
         this.unitOfMeasurements = unitOfMeasurements;
     }
@@ -39,19 +37,11 @@ public class Ingredient {
         IngredientName = ingredientName;
     }
 
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
-
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

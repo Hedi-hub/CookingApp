@@ -2,9 +2,10 @@ package cookingguide.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table
+@Table(name="recipes")
 public class Recipe {
 
     @Id
@@ -17,15 +18,18 @@ public class Recipe {
     private ArrayList<Ingredient> ingredients;
     @Column(name="portion")
     private int portion;
+    @Column(name="calories")
+    private int calories;
     @Column(name="origin_description")
     private String originDescription;
 
     public Recipe(){}
-    public Recipe(String name, int portion, String originDescription) {
+    public Recipe(String name, List<Ingredient> list1, int portion, int calories, String originDescription) {
         this.name = name;
         this.ingredients = new ArrayList<Ingredient>();
         this.portion = portion;
         this.originDescription = originDescription;
+        this.calories = calories;
     }
 
     public int getId() {
@@ -54,6 +58,14 @@ public class Recipe {
 
     public void setPortion(int portion) {
         this.portion = portion;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public String getOriginDescription() {
