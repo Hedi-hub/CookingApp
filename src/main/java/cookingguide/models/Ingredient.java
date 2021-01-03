@@ -11,11 +11,11 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name="ingredient_name")
+
     private String IngredientName;
-    @Column(name="amount")
+
     private double amount;
-    @Column(name="unit_measurement")
+
     private UnitOfMeasurements unitOfMeasurements;
 
     public Ingredient(){}

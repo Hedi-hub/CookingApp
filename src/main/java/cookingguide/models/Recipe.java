@@ -14,8 +14,8 @@ public class Recipe {
 
     @Column(name="recipe_name")
     private String name;
-    @Column(name="ingredient")
-    private ArrayList<Ingredient> ingredients;
+//    @Column(name="ingredient")
+//    private ArrayList<Ingredient> ingredients;
     @Column(name="portion")
     private int portion;
     @Column(name="calories")
@@ -23,10 +23,19 @@ public class Recipe {
     @Column(name="origin_description")
     private String originDescription;
 
+    //Added @OneToMany Annotation for the list of ingredient
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @Column(name="ingredients")
+    private List<Ingredient> ingredientList = new ArrayList<>();
+
+
     public Recipe(){}
-    public Recipe(String name, List<Ingredient> list1, int portion, int calories, String originDescription) {
+    public Recipe(String name, int portion, int calories, String originDescription) {
         this.name = name;
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredientList = new ArrayList<Ingredient>();
         this.portion = portion;
         this.originDescription = originDescription;
         this.calories = calories;
@@ -44,12 +53,14 @@ public class Recipe {
         this.name = name;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
+
+// ***I should chang my ingredient to ingredientList to match the @OneToMany Annotation***
+    public List<Ingredient> getIngredientList() {
+        return ingredientList;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
+    public void setIngredientList(List<Ingredient> ingredientList) {
+        this.ingredientList = ingredientList;
     }
 
     public int getPortion() {
