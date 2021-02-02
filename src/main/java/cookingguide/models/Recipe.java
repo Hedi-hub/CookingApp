@@ -22,6 +22,8 @@ public class Recipe {
     private int calories;
     @Column(name="origin_description")
     private String originDescription;
+    // *** add the description here ***
+    //private String imagePath;
 
     //Added @OneToMany Annotation for the list of ingredient
     @OneToMany(
@@ -39,6 +41,7 @@ public class Recipe {
         this.portion = portion;
         this.originDescription = originDescription;
         this.calories = calories;
+        //this.imagePath = imagePath;
     }
 
     public int getId() {
@@ -86,4 +89,12 @@ public class Recipe {
     public void setOriginDescription(String originDescription) {
         this.originDescription = originDescription;
     }
+
+//    public String getImagePath() {
+//        return imagePath;
+//    }
+//
+//    public void setImagePath(String imagePath) {
+//        this.imagePath = imagePath;
+//    }
 }

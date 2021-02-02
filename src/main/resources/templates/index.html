@@ -14,7 +14,7 @@ thymeleaf to make dynamic ***always has to be here***-->
 <div class="header-wrap">
     <header>
         <div class="logo-wrap">
-            <img src="images/cooking-pot.png" />
+            <img src="images/cooking-pot.png"/>
             <div class="pot-logo"> HAPPY POT</div>
         </div>
 
@@ -22,7 +22,7 @@ thymeleaf to make dynamic ***always has to be here***-->
             <form action="">
                 <input type="text" class="search-bar" placeholder="z.B. Pfankuchen, Lasagne"/>
                 <button class="search-button" type="submit">
-                    <i class="fas fa-search" hedibitter></i>
+                    <i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
@@ -35,15 +35,27 @@ thymeleaf to make dynamic ***always has to be here***-->
             </form>
         </div>
     </header>
+    <div class="navbar">
+        <a href="#">Recipes</a>
+        <a href="#">Community</a>
+        <a href="#">Videos</a>
+        <a href="#"><span class="navbar-icon">
+                <img src="images/favourite.png"/>
+                </span> Cookbook</a>
+
+    </div>
 </div>
 
-
-<!--class is like an ID-->
 <div class="container">
+    <div>
+        <a><img th:src="@{images/food-ingredient.jpg}" class="food-ing-img"></a>
+        <br>
+        <span class="container-title">Quick, easy, delicious recipes</span>
+    </div>
 
 
 </div>
-<footer>
+<footer th:replace="fragments/footer :: footer">
 
 </footer>
 

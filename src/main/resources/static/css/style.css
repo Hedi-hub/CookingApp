@@ -3,13 +3,13 @@ body{
     padding: 0;
     margin: 0;
 }
-
+/* HEADER STYLE START */
 .header-wrap {
     /*the first 3 line is to create the shadow under the header wrap*/
-    -webkit-box-shadow: 0 8px 6px -6px #808080;
-    -moz-box-shadow: 0 8px 6px -6px #808080;
-    box-shadow: 0 8px 6px -6px #808080;
-    padding-bottom: 50px;
+    -webkit-box-shadow: 0 8px 6px -6px lightgrey;
+    -moz-box-shadow: 0 8px 6px -6px lightgrey;
+    box-shadow: 0 8px 6px -6px lightgrey;
+    padding-bottom: 30px;
 }
 
 header {
@@ -89,3 +89,76 @@ header {
 .search-button:hover {
     cursor: pointer;
 }
+
+.navbar{
+    width: 40%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Patrick Hand", cursive;
+    font-size: 15px;
+
+}
+
+.navbar a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #666666;
+
+}
+
+.navbar-icon img{
+    width: 16px;
+}
+
+.navbar-icon{
+    margin-top: 10px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+/* HEADER STYLE ENDS */
+
+/*INDEX STYLE START*/
+.body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+
+}
+.container {
+    /*max-width: 400px;*/
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFFFFF;
+}
+/*INDEX STYLE END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER STYLE START */
+.footer-wrap{
+    /*position: absolute;*/
+    width:100%;
+    height: 150px;
+    background-color: #e68a00 ;
+    padding: 10px;
+
+}
+
+/* FOOTER STYLE ENDS */

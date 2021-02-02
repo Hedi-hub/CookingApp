@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
-@Table
+@Table(name="ingredients")
 public class Ingredient {
 
     @Id
@@ -13,9 +13,7 @@ public class Ingredient {
 
 
     private String IngredientName;
-
     private double amount;
-
     private UnitOfMeasurements unitOfMeasurements;
 
     public Ingredient(){}
