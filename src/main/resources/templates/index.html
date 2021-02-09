@@ -14,7 +14,7 @@ thymeleaf to make dynamic ***always has to be here***-->
 <div class="header-wrap">
     <header>
         <div class="logo-wrap">
-            <img src="images/cooking-pot.png"/>
+            <a th:href="@{/index}"><img src="images/cooking-pot.png"/></a>
             <div class="pot-logo"> HAPPY POT</div>
         </div>
 
@@ -47,12 +47,27 @@ thymeleaf to make dynamic ***always has to be here***-->
 </div>
 
 <div class="container">
-    <div>
-        <a><img th:src="@{images/food-ingredient.jpg}" class="food-ing-img"></a>
+    <div class="food-container">
+        <h3 class="funny-title">LazyFun days</h3>
+        <a th:href="@{/...}"><img th:src="@{images/food-ingredient.jpg}" class="food-ing-img"></a>
         <br>
-        <span class="container-title">Quick, easy, delicious recipes</span>
+        <span class="recipe-title">Find me easy recipes</span>
     </div>
 
+    <div class="food-container">
+        <h3 class="funny-title">BusyHealthy days</h3>
+        <a th:href="@{/...}"><img th:src="@{images/jar-food.jpg}" class="food-ing-img"></a>
+        <br>
+        <span class="recipe-title">Find me quick recipes</span>
+    </div>
+
+    <div class="food-container">
+        <h3 class="funny-title">AsianLove days</h3>
+        <a th:href="@{/...}"><img th:src="@{images/asian-food.jpg}" class="food-ing-img"></a>
+        <br>
+        <span class="recipe-title">Find me unique recipes</span>
+    </div>
+</div>
 
 </div>
 <footer th:replace="fragments/footer :: footer">
