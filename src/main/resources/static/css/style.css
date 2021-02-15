@@ -137,10 +137,10 @@ header {
     /*max-width: 400px;*/
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     margin-bottom: 20%;
     margin-top: 5%;
-    margin-left: 20px;
+    justify-content: space-evenly;
     position: relative;
     background-color: #FFFFFF;
 

@@ -3,6 +3,7 @@ package cookingguide.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="recipes")
@@ -10,6 +11,7 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="recipe_id")
     private int id;
 
     @Column(name="recipe_name")
@@ -27,10 +29,8 @@ public class Recipe {
 
     //Added @OneToMany Annotation for the list of ingredient
     @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    @Column(name="ingredients")
+            targetEntity=Ingredient.class, mappedBy="recipe",
+            cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ingredient> ingredientList = new ArrayList<>();
 
 
@@ -90,11 +90,38 @@ public class Recipe {
         this.originDescription = originDescription;
     }
 
-//    public String getImagePath() {
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", portion=" + portion +
+                ", calories=" + calories +
+                ", originDescription='" + originDescription + '\'' +
+                ", ingredientList=" + ingredientList +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id == recipe.id && portion == recipe.portion && calories == recipe.calories && Objects.equals(name, recipe.name) && Objects.equals(originDescription, recipe.originDescription) && Objects.equals(ingredientList, recipe.ingredientList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, portion, calories, originDescription, ingredientList);
+    }
+
+    //    public String getImagePath() {
 //        return imagePath;
 //    }
 //
 //    public void setImagePath(String imagePath) {
 //        this.imagePath = imagePath;
 //    }
+
+
 }

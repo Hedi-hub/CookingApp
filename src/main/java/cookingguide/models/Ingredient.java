@@ -2,6 +2,8 @@ package cookingguide.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="ingredients")
@@ -9,12 +11,19 @@ public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="ingredient_id")
     private int id;
 
 
     private String IngredientName;
     private double amount;
     private UnitOfMeasurements unitOfMeasurements;
+
+    @ManyToOne()
+    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id", insertable = false, updatable = false)
+    private Recipe recipe;
+
+
 
     public Ingredient(){}
     public Ingredient(String ingredientName, double amount, UnitOfMeasurements unitOfMeasurements) {
@@ -49,5 +58,30 @@ public class Ingredient {
 
     public void setUnitOfMeasurements(UnitOfMeasurements unitOfMeasurements) {
         this.unitOfMeasurements = unitOfMeasurements;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "id=" + id +
+                ", IngredientName='" + IngredientName + '\'' +
+                ", amount=" + amount +
+                ", unitOfMeasurements=" + unitOfMeasurements +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ingredient that = (Ingredient) o;
+        return id == that.id && Double.compare(that.amount, amount) == 0 && Objects.equals(IngredientName, that.IngredientName) && unitOfMeasurements == that.unitOfMeasurements;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, IngredientName, amount, unitOfMeasurements);
     }
 }
