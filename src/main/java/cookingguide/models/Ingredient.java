@@ -20,7 +20,7 @@ public class Ingredient {
     private UnitOfMeasurements unitOfMeasurements;
 
     @ManyToOne()
-    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id", insertable = false, updatable = false)
+    @JoinColumn(name = "recipe_id", referencedColumnName = "recipe_id")
     private Recipe recipe;
 
 
@@ -30,6 +30,14 @@ public class Ingredient {
         IngredientName = ingredientName;
         this.amount = amount;
         this.unitOfMeasurements = unitOfMeasurements;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
     }
 
     public int getId() {

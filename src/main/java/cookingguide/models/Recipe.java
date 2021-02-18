@@ -30,7 +30,7 @@ public class Recipe {
     //Added @OneToMany Annotation for the list of ingredient
     @OneToMany(
             targetEntity=Ingredient.class, mappedBy="recipe",
-            cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+            fetch = FetchType.LAZY)
     private List<Ingredient> ingredientList = new ArrayList<>();
 
 
