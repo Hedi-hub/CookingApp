@@ -24,6 +24,7 @@ public class Recipe {
     private int calories;
     @Column(name="origin_description")
     private String originDescription;
+    private String imageURL;
     // *** add the description here ***
     //private String imagePath;
 
@@ -35,13 +36,19 @@ public class Recipe {
 
 
     public Recipe(){}
-    public Recipe(String name, int portion, int calories, String originDescription) {
+    public Recipe(int id,String name, int portion, int calories, String originDescription, String imageURL) {
+        this.id = id;
         this.name = name;
         this.ingredientList = new ArrayList<Ingredient>();
         this.portion = portion;
         this.originDescription = originDescription;
         this.calories = calories;
+        this.imageURL = imageURL;
         //this.imagePath = imagePath;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -88,6 +95,14 @@ public class Recipe {
 
     public void setOriginDescription(String originDescription) {
         this.originDescription = originDescription;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     @Override

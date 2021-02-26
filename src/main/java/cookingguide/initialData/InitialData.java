@@ -34,7 +34,7 @@ public class InitialData {
     @PostConstruct
     public void initializedInfo(){
 
-        Recipe recipe1 = new Recipe("Bibimbap", 2, 1000, "Korean Dish With Beef And Veggies");
+        Recipe recipe1 = new Recipe(1,"Bibimbap", 2, 1000, "Korean Dish With Beef And Veggies","https://media.istockphoto.com/photos/bi-bim-bap-picture-id183752521?k=6&m=183752521&s=612x612&w=0&h=GfrqG2gYZbmBbUpETOCAzgDz2SttMP2em5EztLB6mF4=");
         Ingredient ingredient1 = new Ingredient("Beef Steak(s)", 250, UnitOfMeasurements.GR);
         Ingredient ingredient2 = new Ingredient("Rice", 1, UnitOfMeasurements.CUP );
         Ingredient ingredient3 = new Ingredient("Carrot(s)", 1, UnitOfMeasurements.Piece);
@@ -66,6 +66,19 @@ public class InitialData {
         recipe1.getIngredientList().add(ingredient13);
         recipe1.getIngredientList().add(ingredient14);
         recipe1.getIngredientList().add(ingredient15);
+
+        Recipe recipe2 = new Recipe(2,"Steak", 1, 300, "Juicy american style steak","https://pixabay.com/get/g9175fcf554b250869089399151359deeefac9ffdbf9bd46a438a00c0af14e766a1eb5acc522291956dfe15ea67305701_640.jpg");
+        Ingredient ing1 = new Ingredient("Rib Eye",200, UnitOfMeasurements.GR);
+        Ingredient ing2 = new Ingredient("Olive oil",1, UnitOfMeasurements.TBSP);
+        Ingredient ing3 = new Ingredient("Salt",1.5, UnitOfMeasurements.TSP);
+        Ingredient ing4 = new Ingredient("Pepper",1.5, UnitOfMeasurements.TSP);
+
+        recipe2.getIngredientList().add(ing1);
+        recipe2.getIngredientList().add(ing2);
+        recipe2.getIngredientList().add(ing3);
+        recipe2.getIngredientList().add(ing4);
+
+
 
 ////        recipe1.getIngredientList().add(
 ////                new Ingredient("Rice", 1, UnitOfMeasurements.CUP )
@@ -178,6 +191,12 @@ public class InitialData {
             ingredientRepository.save(ingredient);
         }
 
+        recipeService.saveRecipe(recipe2);
+        for(Ingredient ingredient : recipe1.getIngredientList()){
+            ingredient.setRecipe(recipe2);
+            ingredientRepository.save(ingredient);
+        }
+
 //        recipeService.saveRecipe(recipe1);
 //        recipeService.saveRecipe(recipe2);
 //        recipeService.saveRecipe(recipe3);
@@ -187,6 +206,7 @@ public class InitialData {
 
 
         System.out.println(ingredientRepository.findIngredientsByRecipe(recipe1));
+
 
 
 
