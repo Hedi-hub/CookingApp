@@ -39,8 +39,13 @@
     </div>
 
     <div class="container">
-        <label th:text="${}" class="food-title"></label>
-        <input type="hidden" name="doctor-name" th:value="${doctorName}">
+        <div th:text="${recipe.name}" class="food-title"></div>
+        <img th:src = "${recipe.imageURL}">
+        ...
+        <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">
+            <div th:text =${ingredient.ingredientName}></div>
+        </div>
+
     </div>
 
 </div>

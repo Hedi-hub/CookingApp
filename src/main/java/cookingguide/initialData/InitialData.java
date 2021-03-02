@@ -78,6 +78,20 @@ public class InitialData {
         recipe2.getIngredientList().add(ing3);
         recipe2.getIngredientList().add(ing4);
 
+        Recipe recipe3 = new Recipe(3,"Shakshuka", 2, 250,"Tunisian and Israelian dish","https://pixabay.com/get/gb2a9c4f3719b499d86bbb8addb2f05fe53145849beb6e44d102971af7a88604be86da1b9a4315bfaa8ddc6900d1beaba_640.jpg" );
+        Ingredient ing_1 = new Ingredient("Eggs",2, UnitOfMeasurements.Pieces);
+        Ingredient ing_2 = new Ingredient("Tomato pure",2, UnitOfMeasurements.TBSP);
+        Ingredient ing_3 = new Ingredient("Paprika Powder",1.2, UnitOfMeasurements.TSP);
+        Ingredient ing_4 = new Ingredient("Salt",1.2, UnitOfMeasurements.TSP);
+        Ingredient ing_5 = new Ingredient("Fresh Tomatoes",4, UnitOfMeasurements.Pieces);
+
+        recipe3.getIngredientList().add(ing_1);
+        recipe3.getIngredientList().add(ing_2);
+        recipe3.getIngredientList().add(ing_3);
+        recipe3.getIngredientList().add(ing_4);
+        recipe3.getIngredientList().add(ing_5);
+
+
 
 
 ////        recipe1.getIngredientList().add(
@@ -192,8 +206,14 @@ public class InitialData {
         }
 
         recipeService.saveRecipe(recipe2);
-        for(Ingredient ingredient : recipe1.getIngredientList()){
+        for(Ingredient ingredient : recipe2.getIngredientList()){
             ingredient.setRecipe(recipe2);
+            ingredientRepository.save(ingredient);
+        }
+
+        recipeService.saveRecipe(recipe3);
+        for (Ingredient ingredient : recipe3.getIngredientList()){
+            ingredient.setRecipe(recipe3);
             ingredientRepository.save(ingredient);
         }
 

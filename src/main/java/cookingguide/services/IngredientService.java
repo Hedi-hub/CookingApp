@@ -31,4 +31,8 @@ public class IngredientService {
         ingredientRepository.delete(ingredient);
     }
 
+    public List<Ingredient> getIngredientForRecipe(Recipe recipe){
+        return ingredientRepository.findIngredientsByRecipe(recipe);
+    }
+
 }
