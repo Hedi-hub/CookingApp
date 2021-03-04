@@ -15,7 +15,8 @@ public class Ingredient {
     private int id;
 
 
-    private String IngredientName;
+
+    private String ingredientName;
     private double amount;
     private UnitOfMeasurements unitOfMeasurements;
 
@@ -27,7 +28,7 @@ public class Ingredient {
 
     public Ingredient(){}
     public Ingredient(String ingredientName, double amount, UnitOfMeasurements unitOfMeasurements) {
-        IngredientName = ingredientName;
+        this.ingredientName = ingredientName;
         this.amount = amount;
         this.unitOfMeasurements = unitOfMeasurements;
     }
@@ -45,11 +46,11 @@ public class Ingredient {
     }
 
     public String getIngredientName() {
-        return IngredientName;
+        return ingredientName;
     }
 
     public void setIngredientName(String ingredientName) {
-        IngredientName = ingredientName;
+        ingredientName = ingredientName;
     }
 
     public double getAmount() {
@@ -74,7 +75,7 @@ public class Ingredient {
     public String toString() {
         return "Ingredient{" +
                 "id=" + id +
-                ", IngredientName='" + IngredientName + '\'' +
+                ", IngredientName='" + ingredientName + '\'' +
                 ", amount=" + amount +
                 ", unitOfMeasurements=" + unitOfMeasurements +
                 '}';
@@ -85,11 +86,11 @@ public class Ingredient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return id == that.id && Double.compare(that.amount, amount) == 0 && Objects.equals(IngredientName, that.IngredientName) && unitOfMeasurements == that.unitOfMeasurements;
+        return id == that.id && Double.compare(that.amount, amount) == 0 && Objects.equals(ingredientName, that.ingredientName) && unitOfMeasurements == that.unitOfMeasurements;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, IngredientName, amount, unitOfMeasurements);
+        return Objects.hash(id, ingredientName, amount, unitOfMeasurements);
     }
 }

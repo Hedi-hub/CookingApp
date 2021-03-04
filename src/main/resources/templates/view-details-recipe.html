@@ -40,10 +40,16 @@
 
     <div class="container">
         <div th:text="${recipe.name}" class="food-title"></div>
-        <img th:src = "${recipe.imageURL}">
-        ...
+        <img th:src = "${recipe.imageURL}" class ="food-image">
+        <div th:text="${recipe.originDescription}" class="food-originDescription"></div>
+        <div th:text="${recipe.calories}" class="food-calories"></div>
+        <div th:text="${recipe.portion}" class="food-portion"></div>
+
+
         <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">
             <div th:text =${ingredient.ingredientName}></div>
+            <div th:text="${ingredient.amount}"></div>
+            <div th:text="${ingredient.unitOfMeasurements}"></div>
         </div>
 
     </div>
