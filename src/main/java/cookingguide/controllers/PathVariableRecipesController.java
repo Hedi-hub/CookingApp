@@ -38,7 +38,7 @@ public class PathVariableRecipesController {
      Recipe recipe = recipeService.getRecipeById(id);
      List<Ingredient> ingredients = ingredientService.getIngredientForRecipe(recipe);
      model.addAttribute("recipe", recipe);
-     model.addAttribute("ingredient", ingredients);
+     model.addAttribute("ingredients", ingredients);
 
         return "view-details-recipe";
 

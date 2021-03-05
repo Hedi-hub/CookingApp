@@ -36,8 +36,8 @@ public class Recipe {
 
 
     public Recipe(){}
-    public Recipe(int id,String name, int portion, int calories, String originDescription, String imageURL) {
-        this.id = id;
+    public Recipe(String name, int portion, int calories, String originDescription, String imageURL) {
+
         this.name = name;
         this.ingredientList = new ArrayList<Ingredient>();
         this.portion = portion;
@@ -47,9 +47,7 @@ public class Recipe {
         //this.imagePath = imagePath;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public int getId() {
         return id;

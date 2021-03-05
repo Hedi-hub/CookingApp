@@ -1,51 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="/fontawesome/css/all.css" rel="stylesheet">
     <title>Recipe-Info-Page</title>
 </head>
 <body>
-<div class="header-wrap">
-    <header>
-        <div class="logo-wrap">
-            <a th:href="@{/index}"><img src="images/cooking-pot.png"/></a>
-            <div class="pot-logo"> HAPPY POT</div>
-        </div>
 
-        <div class="search-wrap">
-            <form action="">
-                <input type="text" class="search-bar" placeholder="z.B. Pfankuchen, Lasagne"/>
-                <button class="search-button" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
+    <div th:replace="fragments/navbar::nav"></div>
 
-        <div class="register-wrap">
-            <form action="/signin"></form>
-            <button type="submit" class="reg-button">
-                <i class="fas fa-user"></i>
-            </button>
-            </form>
-        </div>
-    </header>
-    <div class="navbar">
-        <a href="#">Recipes</a>
-        <a href="#">Community</a>
-        <a href="#">Videos</a>
-        <a href="#"><span class="navbar-icon">
-                <img src="images/favourite.png"/>
-                </span> Cookbook</a>
-
-    </div>
-
-    <div class="container">
-        <div th:text="${recipe.name}" class="food-title"></div>
-        <img th:src = "${recipe.imageURL}" class ="food-image">
+    <div class="recipe-container">
+        <h1 th:text="${recipe.name}" class="food-title"></h1>
+        <img th:src="@{/images/{image}(image=${recipe.imageURL})}" class ="food-image">
         <div th:text="${recipe.originDescription}" class="food-originDescription"></div>
         <div th:text="${recipe.calories}" class="food-calories"></div>
         <div th:text="${recipe.portion}" class="food-portion"></div>
 
-
+        <h2 class="ingredient-title"> Ingredients </h2>
         <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">
             <div th:text =${ingredient.ingredientName}></div>
             <div th:text="${ingredient.amount}"></div>
@@ -54,7 +26,6 @@
 
     </div>
 
-</div>
 
 </body>
 </html>

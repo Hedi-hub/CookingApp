@@ -44,7 +44,11 @@ header {
 
 .register-wrap {
     padding-top: 20px;
-    width: 10%;
+    width: 20%;
+}
+.add-recipe{
+
+
 }
 
 .search-bar {
@@ -169,6 +173,21 @@ header {
 
 }
 /*INDEX STYLE END*/
+
+/* Detailed Recipe Style*/
+
+.recipe-container{
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+.food-title, ingredient-title{
+    margin: 30px 0 ;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
 
 
 
