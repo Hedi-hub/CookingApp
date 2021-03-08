@@ -187,6 +187,53 @@ header {
     font-family: 'Open Sans', sans-serif;
 
 }
+.food-image{
+
+}
+.food-originDescription{
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+#calories-label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+#portion-label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+.food-calories{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+.food-portion{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+.recipe-container h2{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

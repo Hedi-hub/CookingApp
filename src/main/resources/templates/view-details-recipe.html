@@ -10,12 +10,19 @@
 
     <div th:replace="fragments/navbar::nav"></div>
 
+
+
     <div class="recipe-container">
         <h1 th:text="${recipe.name}" class="food-title"></h1>
         <img th:src="@{/images/{image}(image=${recipe.imageURL})}" class ="food-image">
         <div th:text="${recipe.originDescription}" class="food-originDescription"></div>
-        <div th:text="${recipe.calories}" class="food-calories"></div>
-        <div th:text="${recipe.portion}" class="food-portion"></div>
+        <br>
+        <label id="calories-label">Calories(kcal): </label>
+        <span th:text="${recipe.calories}" class="food-calories"></span>
+        <br>
+        <label id="portion-label">Portion: </label>
+        <span th:text="${recipe.portion}" class="food-portion"></span>
+
 
         <h2 class="ingredient-title"> Ingredients </h2>
         <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">
