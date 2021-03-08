@@ -25,14 +25,27 @@
 
 
         <h2 class="ingredient-title"> Ingredients </h2>
-        <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">
-            <div th:text =${ingredient.ingredientName}></div>
-            <div th:text="${ingredient.amount}"></div>
-            <div th:text="${ingredient.unitOfMeasurements}"></div>
-        </div>
+<!--        <div th:each ="ingredient : ${ingredients}" class ="food-ingredients">-->
+<!--            <div th:text =${ingredient.ingredientName}></div>-->
+<!--            <div th:text="${ingredient.amount}"></div>-->
+<!--            <div th:text="${ingredient.unitOfMeasurements}"></div>-->
+<!--        </div>-->
+        <table>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+
+            <tr th:each ="ingredient : ${ingredients}" >
+                <td th:text =${ingredient.ingredientName}></td>
+                <td th:text="${ingredient.amount}" style="text-align: right"></td>
+                <td th:text="${ingredient.unitOfMeasurements}"></td>
+            </tr>
+        </table>
 
     </div>
-
+    <footer th:replace="fragments/footer :: footer"></footer>
 
 </body>
 </html>

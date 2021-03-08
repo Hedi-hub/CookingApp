@@ -27,4 +27,9 @@ public class HomePageController {
 
         return "index";
     }
+
+    @RequestMapping("/showNewRecipeForm")
+    public String showNewRecipePage(){
+        return"add-new-recipe";
+    }
 }

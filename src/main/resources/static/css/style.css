@@ -179,6 +179,7 @@ header {
 .recipe-container{
     width: fit-content;
     margin: 0 auto;
+    margin-bottom: 100px;
 
 }
 
@@ -215,7 +216,47 @@ header {
     font-family: 'Open Sans', sans-serif;
 }
 
+table {
+    font-family: 'Open Sans', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/*ADD New Recipe*/
+.new-recipe-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.text-newRecipe{
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0;
+}
+.submit-new{
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0;
+    background-color: #aaaaaa;
+    color: white;
+
+
+}
+.submit-new:hover{
+    background-color:#e68a00;
+
+}
 
 
 

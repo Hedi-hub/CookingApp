@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<!--adding Technical template to our html aka
+thymeleaf to make dynamic ***always has to be here***-->
+<head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <title>Add - New - Recipe</title>
+</head>
+
+<body>
+
+<div th:replace="fragments/navbar::nav"></div>
+
+<div class="container">
+    <form th:action="@{/add-new-recipe}" class="new-recipe-form">
+        <input class="text-newRecipe" type="text" name="recipeName" placeholder="What is the recipe title?">
+        <input class="text-newRecipe" type="number" name="recipePortion" placeholder="How many portions is it?">
+        <textarea class="text-newRecipe" type="text" name="description" placeholder="How to prepare this recipe?"></textarea>
+        <input class="submit-new" type="submit" value="Add me">
+
+
+
+    </form>
+
+</div>
+<footer th:replace="fragments/footer :: footer">
+
+</footer>
+</body>
+</html>
