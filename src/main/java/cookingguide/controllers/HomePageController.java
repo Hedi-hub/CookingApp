@@ -30,6 +30,7 @@ public class HomePageController {
 
     @RequestMapping("/showNewRecipeForm")
     public String showNewRecipePage(){
+
         return"add-new-recipe";
     }
 }

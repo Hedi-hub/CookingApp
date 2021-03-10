@@ -18,6 +18,27 @@ thymeleaf to make dynamic ***always has to be here***-->
         <input class="text-newRecipe" type="text" name="recipeName" placeholder="What is the recipe title?">
         <input class="text-newRecipe" type="number" name="recipePortion" placeholder="How many portions is it?">
         <textarea class="text-newRecipe" type="text" name="description" placeholder="How to prepare this recipe?"></textarea>
+        <div class="add-ingredients-wrap">
+            <input type="text" class="text-newRecipe" id="ingredient">
+            <select class="unit-Measurements">
+                <option>GR</option>
+                <option>KG</option>
+                <option>TSP</option>
+                <option>TBSP</option>
+                <option>CUP</option>
+                <option>LTR</option>
+                <option>HANDFUL</option>
+                <option>PINCH</option>
+                <option>Pieces</option>
+                <option>Piece</option>
+                <option>Clove</option>
+                <option>Cloves</option>
+            </select>
+
+            <img class="add-ingredient-icon-img" src="/images/plus.png" width="30" height="30"/>
+            
+        </div>
+
         <input class="submit-new" type="submit" value="Add me">
 
 

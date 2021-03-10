@@ -251,10 +251,23 @@ tr:nth-child(even) {
     background-color: #aaaaaa;
     color: white;
 
+}
 
+/*To get rid of the input default design border*/
+.input[type="submit"]{
+    border: none;
 }
 .submit-new:hover{
     background-color:#e68a00;
+}
+.add-ingredients-wrap{
+
+}
+.unit-Measurements{
+
+}
+.add-ingredient-icon-img{
+    margin-left: 20px;
 
 }
 
