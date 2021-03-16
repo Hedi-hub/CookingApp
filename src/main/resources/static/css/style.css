@@ -233,7 +233,7 @@ tr:nth-child(even) {
 
 /*ADD New Recipe*/
 .new-recipe-form{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
 }
@@ -244,7 +244,7 @@ tr:nth-child(even) {
     margin: 10px 0;
 }
 .submit-new{
-    padding: 10px 0;
+    padding: 10px 50px !important;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     margin: 10px 0;
@@ -254,8 +254,11 @@ tr:nth-child(even) {
 }
 
 /*To get rid of the input default design border*/
-.input[type="submit"]{
+input[type="submit"]{
     border: none;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
 }
 .submit-new:hover{
     background-color:#e68a00;
@@ -263,12 +266,26 @@ tr:nth-child(even) {
 .add-ingredients-wrap{
 
 }
-.unit-Measurements{
+.unit-measurements{
+
 
 }
 .add-ingredient-icon-img{
     margin-left: 20px;
 
+}
+.add-ingredient-icon-img:hover{
+    cursor: pointer;
+}
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.row h1{
+    font-family: 'Open Sans', sans-serif;
 }
 
 

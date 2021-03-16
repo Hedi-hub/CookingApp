@@ -14,13 +14,18 @@ thymeleaf to make dynamic ***always has to be here***-->
 <div th:replace="fragments/navbar::nav"></div>
 
 <div class="container">
-    <form th:action="@{/add-new-recipe}" class="new-recipe-form">
+    <form th:action="@{/add-new-recipe}" class="new-recipe-form" id="recipe-form">
+        <div class="row">
+            <h1>Fill in the form</h1>
+            <input class="submit-new" type="submit" value="Add recipe">
+        </div>
         <input class="text-newRecipe" type="text" name="recipeName" placeholder="What is the recipe title?">
         <input class="text-newRecipe" type="number" name="recipePortion" placeholder="How many portions is it?">
         <textarea class="text-newRecipe" type="text" name="description" placeholder="How to prepare this recipe?"></textarea>
+
         <div class="add-ingredients-wrap">
-            <input type="text" class="text-newRecipe" id="ingredient">
-            <select class="unit-Measurements">
+            <input type="text" id="ingredient-input" class="text-newRecipe" style= "width: 80%" placeholder="Add ingredient...">
+            <select id="select-dropdown" class="unit-measurements" style="vertical-align: middle" >
                 <option>GR</option>
                 <option>KG</option>
                 <option>TSP</option>
@@ -35,19 +40,28 @@ thymeleaf to make dynamic ***always has to be here***-->
                 <option>Cloves</option>
             </select>
 
-            <img class="add-ingredient-icon-img" src="/images/plus.png" width="30" height="30"/>
-            
+            <img class="add-ingredient-icon-img" onclick="addIngredient();" src="/images/plus.png" width="30" height="30" style="vertical-align: middle"/>
+
         </div>
 
-        <input class="submit-new" type="submit" value="Add me">
-
-
-
     </form>
+    <div id="ingredient-list"></div>
 
 </div>
 <footer th:replace="fragments/footer :: footer">
 
 </footer>
+
+<script>
+    function addIngredient(){
+       var ingredientTitle = document.getElementById("ingredient-input").value();
+       var ingredientAdded = document.createElement("div");
+       ingredientAdded.innerHTML = ingredientTitle;
+       ingredientAdded.classList.add("ingredient-input");
+       document.getElementById("ingredient-list").appendChild(ingredientAdded);
+       document.getElementById("ingredient-input").value="";
+
+    }
+</script>
 </body>
 </html>
