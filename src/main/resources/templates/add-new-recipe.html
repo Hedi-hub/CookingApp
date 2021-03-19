@@ -13,7 +13,7 @@ thymeleaf to make dynamic ***always has to be here***-->
 
 <div th:replace="fragments/navbar::nav"></div>
 
-<div class="container">
+<div class="container-ingredients">
     <form th:action="@{/add-new-recipe}" class="new-recipe-form" id="recipe-form">
         <div class="row">
             <h1>Fill in the form</h1>
@@ -24,7 +24,8 @@ thymeleaf to make dynamic ***always has to be here***-->
         <textarea class="text-newRecipe" type="text" name="description" placeholder="How to prepare this recipe?"></textarea>
 
         <div class="add-ingredients-wrap">
-            <input type="text" id="ingredient-input" class="text-newRecipe" style= "width: 80%" placeholder="Add ingredient...">
+            <input type="text" id="ingredient-input" class="text-newRecipe" style= "width: 60%" placeholder="Add ingredient...">
+            <input type="number" id="ingredient-amount" class="text-newRecipe" placeholder="How much of?">
             <select id="select-dropdown" class="unit-measurements" style="vertical-align: middle" >
                 <option>GR</option>
                 <option>KG</option>
@@ -54,12 +55,24 @@ thymeleaf to make dynamic ***always has to be here***-->
 
 <script>
     function addIngredient(){
-       var ingredientTitle = document.getElementById("ingredient-input").value();
+       var ingredientTitle = document.getElementById("ingredient-input").value;
+       var ingredientAmout = document.getElementById("ingredient-amount").value;
+       var selectElement = document.getElementById("select-dropdown");
+       var unitOfMasurement  = selectElement.options[selectElement.selectedIndex].text;
+
+
        var ingredientAdded = document.createElement("div");
-       ingredientAdded.innerHTML = ingredientTitle;
-       ingredientAdded.classList.add("ingredient-input");
+       ingredientAdded.id = "ingredient-"+ingredientTitle;
+       ingredientAdded.innerHTML = ingredientTitle +" "+ingredientAmout+ " "+ unitOfMasurement + "<div class='icon-minus' id='icon-minus-"+ingredientTitle+"'></div>";;
+       ingredientAdded.classList.add("ingredient-added");
        document.getElementById("ingredient-list").appendChild(ingredientAdded);
        document.getElementById("ingredient-input").value="";
+       document.getElementById("ingredient-amount").value="";
+
+       document.getElementById("icon-minus-" + ingredientTitle).onclick = function (){
+           document.getElementById("ingredient-list").removeChild(ingredientAdded);
+
+       }
 
     }
 </script>

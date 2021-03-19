@@ -137,7 +137,7 @@ header {
     justify-content: space-evenly;
 
 }
-.container {
+.container{
     /*max-width: 400px;*/
     display: flex;
     flex-direction: row;
@@ -149,6 +149,7 @@ header {
     background-color: #FFFFFF;
 
 }
+
 .container a{
     text-decoration: none;
 }
@@ -233,9 +234,11 @@ tr:nth-child(even) {
 
 /*ADD New Recipe*/
 .new-recipe-form{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
+    margin: 5% auto;
+
 }
 .text-newRecipe{
     padding: 10px 0;
@@ -286,6 +289,37 @@ input[type="submit"]:hover{
 }
 .row h1{
     font-family: 'Open Sans', sans-serif;
+}
+#ingredient-list{
+    width: 80%;
+    margin: 0 auto 10% auto;
+}
+.ingredient-added{
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    padding: 2px 5px;
+    margin: 5px 0;
+    width: fit-content;
+    color: black;
+    display: flex;
+    flex-direction: row;
+
+
+}
+/*+++WE ADD PSEUDO ELEMENT TO CREATE THE MINUS+++*/
+.icon-minus::after{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f056";
+    margin-left: 5px;
+}
+.icon-minus:hover{
+    cursor: pointer;
 }
 
 
