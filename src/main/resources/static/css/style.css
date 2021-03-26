@@ -380,6 +380,7 @@ input[type="submit"]:hover{
 .footer-navigation-wrap a{
     font-weight: bolder;
     text-decoration: none;
+    color: black;
 }
 /* with :visited you can change the default design of a */
 .footer-navigation-wrap a:visited{

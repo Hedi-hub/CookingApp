@@ -44,6 +44,9 @@ thymeleaf to make dynamic ***always has to be here***-->
             <img class="add-ingredient-icon-img" onclick="addIngredient();" src="/images/plus.png" width="30" height="30" style="vertical-align: middle"/>
 
         </div>
+        <input type="hidden" id="ingredient-titles" name="ingrTitles">
+        <input type="hidden" id="ingredient-units" name="ingrUnits">
+        <input type="hidden" id="ingredient-amounts" name="ingrAmounts">
 
     </form>
     <div id="ingredient-list"></div>
@@ -54,16 +57,26 @@ thymeleaf to make dynamic ***always has to be here***-->
 </footer>
 
 <script>
+
+    var ingrTitles = [];
+    var ingrAmounts = [];
+    var ingrUnits = [];
+
     function addIngredient(){
        var ingredientTitle = document.getElementById("ingredient-input").value;
-       var ingredientAmout = document.getElementById("ingredient-amount").value;
+       ingrTitles.push(ingredientTitle);
+
+       var ingredientAmount = document.getElementById("ingredient-amount").value;
+       ingrAmounts.push(ingredientAmount);
+
        var selectElement = document.getElementById("select-dropdown");
        var unitOfMasurement  = selectElement.options[selectElement.selectedIndex].text;
+       ingrUnits.push(unitOfMasurement);
 
 
        var ingredientAdded = document.createElement("div");
        ingredientAdded.id = "ingredient-"+ingredientTitle;
-       ingredientAdded.innerHTML = ingredientTitle +" "+ingredientAmout+ " "+ unitOfMasurement + "<div class='icon-minus' id='icon-minus-"+ingredientTitle+"'></div>";;
+       ingredientAdded.innerHTML = ingredientTitle +" "+ingredientAmount+ " "+ unitOfMasurement + "<div class='icon-minus' id='icon-minus-"+ingredientTitle+"'></div>";;
        ingredientAdded.classList.add("ingredient-added");
        document.getElementById("ingredient-list").appendChild(ingredientAdded);
        document.getElementById("ingredient-input").value="";
@@ -71,8 +84,11 @@ thymeleaf to make dynamic ***always has to be here***-->
 
        document.getElementById("icon-minus-" + ingredientTitle).onclick = function (){
            document.getElementById("ingredient-list").removeChild(ingredientAdded);
-
        }
+
+       document.getElementById("ingredient-titles").value = ingrTitles;
+       document.getElementById("ingredient-units").value = ingrUnits;
+       document.getElementById("ingredient-amounts").value = ingrAmounts;
 
     }
 </script>
