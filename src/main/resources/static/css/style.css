@@ -124,6 +124,22 @@ header {
     outline: 0 !important;
 }
 
+.submenu{
+    flex-direction: column;
+    display: none;
+    -webkit-box-shadow: -1px 1px 8px 7px rgba(0,0,0,0.17);
+    box-shadow: -1px 1px 8px 7px rgba(0,0,0,0.17);
+    position: absolute;
+    background-color: white;
+    padding: 0 10px;
+}
+.submenu a{
+    padding: 10px;
+}
+.category-menu:hover .submenu{
+    display: flex;
+}
+
 /* HEADER STYLE ENDS */
 
 /*INDEX STYLE START*/
@@ -143,10 +159,11 @@ header {
     flex-direction: row;
     width: 100%;
     margin-bottom: 20%;
-    margin-top: 5%;
+    margin-top: 10%;
     justify-content: space-evenly;
     position: relative;
     background-color: #FFFFFF;
+
 
 }
 
