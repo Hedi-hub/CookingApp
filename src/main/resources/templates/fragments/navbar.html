@@ -62,16 +62,17 @@
             <a href="#">Recipes</a>
 
             <div class="submenu">
-                <a href="#">Regional</a>
-                <a href="#">Bakary</a>
-                <a href="#">Seasonal</a>
-                <a href="#">Drinks</a>
+<!--              <a th:href="@{/pathvars/single/{id}(id = ${item.id})}">  -->
+                <a th:href="@{/showRecipesForCategory/{category}(category= 'regional')}">Regional</a>
+                <a th:href="@{/showRecipesForCategory/{category}(category= 'bakery')}">Bakary</a>
+                <a th:href="@{/showRecipesForCategory/{category}(category= 'seasonal')}">Seasonal</a>
+                <a th:href="@{/showRecipesForCategory/{category}(category= 'drinks')}">Drinks</a>
             </div>
 
         </div>
 
         <a href="#">Community</a>
-        <a href="#">Videos</a>
+        
         <a href="#"><span class="navbar-icon">
                 <img src="/images/favourite.png"/>
                 </span> Cookbook</a>

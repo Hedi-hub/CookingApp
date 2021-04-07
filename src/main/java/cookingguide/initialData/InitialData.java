@@ -34,7 +34,7 @@ public class InitialData {
     @PostConstruct
     public void initializedInfo(){
 
-        Recipe recipe1 = new Recipe("Bibimbap", 2, 1000, "Korean Dish With Beef And Veggies","bibimbap.jpg");
+        Recipe recipe1 = new Recipe("Bibimbap", 2, 1000, "Korean Dish With Beef And Veggies","bibimbap.jpg","Regional");
         Ingredient ingredient1 = new Ingredient("Beef Steak(s)", 250, UnitOfMeasurements.GR);
         Ingredient ingredient2 = new Ingredient("Rice", 1, UnitOfMeasurements.CUP );
         Ingredient ingredient3 = new Ingredient("Carrot(s)", 1, UnitOfMeasurements.Piece);
@@ -67,7 +67,7 @@ public class InitialData {
         recipe1.getIngredientList().add(ingredient14);
         recipe1.getIngredientList().add(ingredient15);
 
-        Recipe recipe2 = new Recipe("Steak", 1, 300, "Juicy american style steak","steak.jpg");
+        Recipe recipe2 = new Recipe("Steak", 1, 300, "Juicy american style steak","steak.jpg","Seasonal");
         Ingredient ing1 = new Ingredient("Rib Eye",200, UnitOfMeasurements.GR);
         Ingredient ing2 = new Ingredient("Olive oil",1, UnitOfMeasurements.TBSP);
         Ingredient ing3 = new Ingredient("Salt",1.5, UnitOfMeasurements.TSP);
@@ -78,7 +78,7 @@ public class InitialData {
         recipe2.getIngredientList().add(ing3);
         recipe2.getIngredientList().add(ing4);
 
-        Recipe recipe3 = new Recipe("Shakshuka", 2, 250,"Tunisian and Israelian dish","food-ingredient.jpg" );
+        Recipe recipe3 = new Recipe("Shakshuka", 2, 250,"Tunisian and Israelian dish","food-ingredient.jpg","Regional" );
         Ingredient ing_1 = new Ingredient("Eggs",2, UnitOfMeasurements.Pieces);
         Ingredient ing_2 = new Ingredient("Tomato pure",2, UnitOfMeasurements.TBSP);
         Ingredient ing_3 = new Ingredient("Paprika Powder",1.2, UnitOfMeasurements.TSP);

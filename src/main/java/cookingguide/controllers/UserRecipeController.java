@@ -28,8 +28,10 @@ public class UserRecipeController {
                                @RequestParam("description") String description,
                                @RequestParam("ingrTitles") String ingrTitles,
                                @RequestParam("ingrAmounts") String ingrAmounts,
-                               @RequestParam("ingrUnits") String ingrUnits) {
-        Recipe recipe = new Recipe(recipeName, recipePortion,0, description,"");
+                               @RequestParam("ingrUnits") String ingrUnits,
+                               @RequestParam("category") String category
+    ) {
+        Recipe recipe = new Recipe(recipeName, recipePortion,0, description,"",category);
         recipeService.saveRecipe(recipe);
         String [] titles= ingrTitles.split(",");
         String [] units= ingrUnits.split(",");
