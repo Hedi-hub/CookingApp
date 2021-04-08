@@ -38,7 +38,7 @@
 
         <div class="search-wrap">
             <form action="">
-                <input type="text" class="search-bar" placeholder="z.B. Pfankuchen, Lasagne"/>
+                <input type="text" class="search-bar" placeholder="e.g. Steak, Sushi, ..."/>
                 <button class="search-button" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -64,7 +64,7 @@
             <div class="submenu">
 <!--              <a th:href="@{/pathvars/single/{id}(id = ${item.id})}">  -->
                 <a th:href="@{/showRecipesForCategory/{category}(category= 'regional')}">Regional</a>
-                <a th:href="@{/showRecipesForCategory/{category}(category= 'bakery')}">Bakary</a>
+                <a th:href="@{/showRecipesForCategory/{category}(category= 'bakery')}">Bakery</a>
                 <a th:href="@{/showRecipesForCategory/{category}(category= 'seasonal')}">Seasonal</a>
                 <a th:href="@{/showRecipesForCategory/{category}(category= 'drinks')}">Drinks</a>
             </div>
