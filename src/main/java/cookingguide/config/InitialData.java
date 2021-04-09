@@ -1,21 +1,19 @@
-package cookingguide.initialData;
+package cookingguide.config;
 
 import cookingguide.models.Ingredient;
 import cookingguide.models.Recipe;
 import cookingguide.models.UnitOfMeasurements;
+import cookingguide.models.User;
 import cookingguide.repositories.IngredientRepository;
-import cookingguide.repositories.RecipeRepository;
 import cookingguide.services.IngredientService;
 import cookingguide.services.RecipeService;
+import cookingguide.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.util.Arrays.asList;
 
 @Configuration
 public class InitialData {
@@ -29,6 +27,13 @@ public class InitialData {
 
     @Autowired
     IngredientRepository ingredientRepository;
+
+    @Autowired
+    UserService userService;
+
+   @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     //add the @PostConstruct
     @PostConstruct
@@ -123,8 +128,12 @@ public class InitialData {
         System.out.println(ingredientRepository.findIngredientsByRecipe(recipe1));
 
 
+//********************************************************************************************************************************//
 
+        User user = new User("Tom Hanks","test@gmail.com",
+                passwordEncoder.encode("test"),"USA, NYC");
 
+        userService.saveUser(user);
 
 
 
