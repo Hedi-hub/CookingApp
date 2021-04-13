@@ -17,7 +17,7 @@ public class HomePageController {
     @Autowired
     private RecipeService recipeService;
 
-    @RequestMapping(value={"/", "/index", "/home"})
+    @RequestMapping(value={ "/index", "/home"})
     public String showHomePage(Model model){
         List<Recipe> allRecipes = recipeService.getAllRecipes();
         List<Recipe> topThreeRecipes = new ArrayList<>();

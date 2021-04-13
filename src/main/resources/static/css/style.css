@@ -339,6 +339,26 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 
+/* REGISTRATION START*/
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-form{
+    width: 70%;
+    margin: 10% auto;
+}
+
+.custom-input{
+    margin: 20px 0;
+}
+
+
+
+
+/* REGISTRATION END*/
 
 
 
