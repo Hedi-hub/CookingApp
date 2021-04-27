@@ -21,6 +21,7 @@ public class HomePageController {
     public String showHomePage(Model model){
         List<Recipe> allRecipes = recipeService.getAllRecipes();
         List<Recipe> topThreeRecipes = new ArrayList<>();
+        //these to see 3 recipes on the screen
         topThreeRecipes.add(allRecipes.get(0));
         topThreeRecipes.add(allRecipes.get(1));
         topThreeRecipes.add(allRecipes.get(2));

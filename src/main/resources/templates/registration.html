@@ -6,16 +6,22 @@
     <link href="/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     <title>sign up</title>
 </head>
-<body>
+<body style="background-color: #EEEEEE">
 
-<form th:action="@{/register}" class="reg-form">
+<form th:action="@{/registerNew}" class="reg-form">
+    <h2>Register here</h2>
     <div class="column">
-        <input class="custom-input" type="text" placeholder="Full name here" name="fullname">
+        <input class="custom-input" type="text" placeholder="Full name here" name="fullName">
         <input class="custom-input" type="text" placeholder="Location here" name="location">
         <input class="custom-input" type="email" placeholder="Your email here" name="email">
         <input class="custom-input" type="password" placeholder="Password here" name="password">
-        <input class="custom-input" type="submit" value="submit">
+        <input class="custom-input custom-button" type="Submit" value="submit">
     </div>
+</form>
+<form class="reg-form" style="font-size: 15px">
+    Already a user?
+    <a th:href="@{/login}">Login</a>
+
 </form>
 
 
