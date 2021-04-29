@@ -17,7 +17,7 @@ public class UserRegistrationController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = {"/register", "/"})
+    @RequestMapping(value = {"/register"})
     public String showRegisterPage(){
 
         return "registration";
@@ -29,7 +29,7 @@ public class UserRegistrationController {
                                   @RequestParam("email") String email,
                                   @RequestParam("password") String password){
 
-        User user = new User(fullName,location,email,passwordEncoder.encode(password));
+        User user = new User(fullName,email,passwordEncoder.encode(password),location);
         userService.saveUser(user);
         return"redirect:/login";
     }

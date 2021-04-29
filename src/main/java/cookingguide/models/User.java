@@ -24,7 +24,7 @@ public class User implements UserDetails {
     private String username;
     @Column(name="password")
     private String password;
-    @Column(name="flocation")
+    @Column(name="location")
     private String location;
 
     public User(){
