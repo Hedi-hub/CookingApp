@@ -131,7 +131,7 @@ public class InitialData {
 //********************************************************************************************************************************//
 
         User user = new User("Tom Hanks","test@gmail.com",
-                passwordEncoder.encode("test"),"USA, NYC");
+                passwordEncoder.encode("test"),"USA, NYC","Male");
 
         userService.saveUser(user);
 

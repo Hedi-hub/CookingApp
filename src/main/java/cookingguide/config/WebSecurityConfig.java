@@ -67,7 +67,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/login?error")
                 .usernameParameter("email")
                 .passwordParameter("password")
-                .permitAll();
+                .permitAll().
+                and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
 
     @Override

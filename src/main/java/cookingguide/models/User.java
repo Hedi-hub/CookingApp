@@ -26,15 +26,20 @@ public class User implements UserDetails {
     private String password;
     @Column(name="location")
     private String location;
+    @Column(name="gender")
+    private String gender;
+    @Column(name="badge")
+    private String badge;
 
     public User(){
         this.accountNonExpired=true;
         this.accountNonLocked=true;
         this.credentialNonExpired=true;
         this.isEnabled=true;
+        this.badge="Newbie";
     }
 
-    public User(String fullName, String username, String password, String location) {
+    public User(String fullName, String username, String password, String location,String gender) {
         this.fullName = fullName;
         this.username = username;
         this.password = password;
@@ -43,6 +48,9 @@ public class User implements UserDetails {
         this.accountNonLocked=true;
         this.credentialNonExpired=true;
         this.isEnabled=true;
+        this.gender= gender;
+        this.badge="Newbie";
+
     }
 
 
@@ -115,6 +123,22 @@ public class User implements UserDetails {
         return isEnabled;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getBadge() {
+        return badge;
+    }
+
+    public void setBadge(String badge) {
+        this.badge = badge;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -136,6 +160,8 @@ public class User implements UserDetails {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", location='" + location + '\'' +
+                ", gender='" + gender + '\'' +
+                ", badge='" + badge + '\'' +
                 ", accountNonExpired=" + accountNonExpired +
                 ", accountNonLocked=" + accountNonLocked +
                 ", credentialNonExpired=" + credentialNonExpired +
