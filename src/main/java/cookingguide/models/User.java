@@ -30,6 +30,8 @@ public class User implements UserDetails {
     private String gender;
     @Column(name="badge")
     private String badge;
+    @Column(name="profile_image")
+    private String imagePath;
 
     public User(){
         this.accountNonExpired=true;
@@ -50,6 +52,11 @@ public class User implements UserDetails {
         this.isEnabled=true;
         this.gender= gender;
         this.badge="Newbie";
+        if (this.gender.equalsIgnoreCase("male")){
+            this.imagePath = "/images/male-profile.png";
+        }else{
+            this.imagePath = "/images/female-profile.png";
+        }
 
     }
 
@@ -137,6 +144,14 @@ public class User implements UserDetails {
 
     public void setBadge(String badge) {
         this.badge = badge;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     @Override

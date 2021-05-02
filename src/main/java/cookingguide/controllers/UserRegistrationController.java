@@ -27,9 +27,10 @@ public class UserRegistrationController {
     public String registerNewUser(@RequestParam("fullName") String fullName,
                                   @RequestParam("location") String location,
                                   @RequestParam("email") String email,
-                                  @RequestParam("password") String password){
+                                  @RequestParam("password") String password,
+                                  @RequestParam("gender") String gender){
 
-        User user = new User(fullName,email,passwordEncoder.encode(password),location);
+        User user = new User(fullName,email,passwordEncoder.encode(password),location, gender);
         userService.saveUser(user);
         return"redirect:/login";
     }

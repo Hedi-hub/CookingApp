@@ -391,6 +391,9 @@ input[type="submit"]:hover{
     color: blue;
 }
 
+.custom-label{
+    font-size: 20px;
+}
 
 
 
