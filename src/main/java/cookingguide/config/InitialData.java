@@ -135,6 +135,31 @@ public class InitialData {
 
         userService.saveUser(user);
 
+        User user2 = new User("Marta","marta@gmail.com",
+                passwordEncoder.encode("test2"),"USA, NYC","female");
+
+        userService.saveUser(user2);
+
+        User user3 = new User("Heidi","heidi@gmail.com",
+                passwordEncoder.encode("test3"),"Germany","female");
+
+        userService.saveUser(user3);
+
+        User user4 = new User("Michel","michel@gmail.com",
+                passwordEncoder.encode("test4"),"USA, NYC","male");
+
+        userService.saveUser(user4);
+
+        User user5 = new User("Marta","martha24@gmail.com",
+                passwordEncoder.encode("test5"),"Austria","female");
+
+        userService.saveUser(user5);
+
+        User user6 = new User("Maria","maria@gmail.com",
+                passwordEncoder.encode("test2"),"Georgia","female");
+
+        userService.saveUser(user6);
+
 
 
     }
