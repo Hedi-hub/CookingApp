@@ -150,7 +150,7 @@ public class InitialData {
 
         userService.saveUser(user4);
 
-        User user5 = new User("Marta","martha24@gmail.com",
+        User user5 = new User("Martha","martha24@gmail.com",
                 passwordEncoder.encode("test5"),"Austria","female");
 
         userService.saveUser(user5);
@@ -159,7 +159,6 @@ public class InitialData {
                 passwordEncoder.encode("test2"),"Georgia","female");
 
         userService.saveUser(user6);
-
 
 
     }

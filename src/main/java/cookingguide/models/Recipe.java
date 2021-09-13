@@ -36,6 +36,10 @@ public class Recipe {
             fetch = FetchType.LAZY)
     private List<Ingredient> ingredientList = new ArrayList<>();
 
+    @ManyToOne()
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
+
 
     public Recipe(){}
     public Recipe(String name, int portion, int calories, String originDescription, String imageURL, String category) {

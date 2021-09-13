@@ -5,9 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name="customers")
@@ -29,7 +27,7 @@ public class User implements UserDetails {
     @Column(name="gender")
     private String gender;
     @Column(name="badge")
-    private String badge;
+    private Badge badge;
     @Column(name="profile_image")
     private String imagePath;
 
@@ -38,7 +36,7 @@ public class User implements UserDetails {
         this.accountNonLocked=true;
         this.credentialNonExpired=true;
         this.isEnabled=true;
-        this.badge="Newbie";
+        this.badge=Badge.NEWBIE;
     }
 
     public User(String fullName, String username, String password, String location,String gender) {
@@ -51,7 +49,7 @@ public class User implements UserDetails {
         this.credentialNonExpired=true;
         this.isEnabled=true;
         this.gender= gender;
-        this.badge="Newbie";
+        this.badge=Badge.NEWBIE;
         if (this.gender.equalsIgnoreCase("male")){
             this.imagePath = "/images/male-profile.png";
         }else{
@@ -59,6 +57,10 @@ public class User implements UserDetails {
         }
 
     }
+    @OneToMany(
+            targetEntity=Recipe.class, mappedBy="user",
+            fetch = FetchType.LAZY)
+    private List<Recipe> recipes = new ArrayList<>();
 
 
     @Transient
@@ -139,10 +141,10 @@ public class User implements UserDetails {
     }
 
     public String getBadge() {
-        return badge;
+        return badge.getBadgeWording();
     }
 
-    public void setBadge(String badge) {
+    public void setBadge(Badge badge) {
         this.badge = badge;
     }
 

@@ -6,6 +6,8 @@ import cookingguide.models.UnitOfMeasurements;
 import cookingguide.services.IngredientService;
 import cookingguide.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,6 +51,8 @@ public class UserRecipeController {
             ingredient.setRecipe(recipe);
             ingredientService.saveIngredient(ingredient);
         }
+
+        
 
         recipe.setIngredientList(ingredientList);
         recipeService.saveRecipe(recipe);

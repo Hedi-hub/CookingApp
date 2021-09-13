@@ -15,8 +15,9 @@
 <div class="container community">
 
   <div  class="users-box" th:each="user : ${allUsers}">
-    <img th:src="${user.imagePath}">
-    <div th:text="${user.fullName}"></div>
+    <img class="profile-pic" th:src="${user.imagePath}">
+    <div class="profile-name" th:text="${user.fullName}"></div>
+    <div class="badge" th:text=" ${user.badge}"></div>
 
   </div>
 
