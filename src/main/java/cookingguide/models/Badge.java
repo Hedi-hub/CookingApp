@@ -2,9 +2,9 @@ package cookingguide.models;
 
 public enum Badge {
 
-    NEWBIE("newbie"),
-    INTERMEDIATE("intermediate"),
-    ADVANCED("advanced");
+    NEWBIE("Newbie"),
+    INTERMEDIATE("Intermediate"),
+    ADVANCED("Advanced");
 
     private String badgeWording;
     private Badge(String badgeWording){

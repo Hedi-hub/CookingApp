@@ -1,9 +1,6 @@
 package cookingguide.config;
 
-import cookingguide.models.Ingredient;
-import cookingguide.models.Recipe;
-import cookingguide.models.UnitOfMeasurements;
-import cookingguide.models.User;
+import cookingguide.models.*;
 import cookingguide.repositories.IngredientRepository;
 import cookingguide.services.IngredientService;
 import cookingguide.services.RecipeService;
@@ -132,7 +129,7 @@ public class InitialData {
 
         User user = new User("Tom Hanks","test@gmail.com",
                 passwordEncoder.encode("test"),"USA, NYC","Male");
-
+        user.setBadge(Badge.INTERMEDIATE);
         userService.saveUser(user);
 
         User user2 = new User("Marta","marta@gmail.com",
@@ -142,7 +139,7 @@ public class InitialData {
 
         User user3 = new User("Heidi","heidi@gmail.com",
                 passwordEncoder.encode("test3"),"Germany","female");
-
+        user3.setBadge(Badge.ADVANCED);
         userService.saveUser(user3);
 
         User user4 = new User("Michel","michel@gmail.com",

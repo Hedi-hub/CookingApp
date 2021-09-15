@@ -8,13 +8,15 @@
   <title>Cooking Guide App</title>
 </head>
 
-<body>
+<body onload="addColorClassDynamically()">
+
 
 <div th:replace="fragments/navbar::nav"></div>
 
 <div class="container community">
 
   <div  class="users-box" th:each="user : ${allUsers}">
+
     <img class="profile-pic" th:src="${user.imagePath}">
     <div class="profile-name" th:text="${user.fullName}"></div>
     <div class="badge" th:text=" ${user.badge}"></div>
@@ -26,6 +28,24 @@
 <footer th:replace="fragments/footer :: footer">
 
 </footer>
+
+<script>
+  function addColorClassDynamically(){
+    var items = document.getElementsByClassName("badge");
+    for(var i =0; i<items.length; i++){
+      var itemText= items[i].innerHTML;
+      if(itemText == "Newbie"){
+        items[i].classList.add("newbie");
+      }
+      if (itemText == "Intermediate"){
+        items[i].classList.add("intermediate");
+      }
+      if (itemText == "Advanced"){
+        items[i].classList.add("advanced");
+      }
+    }
+  }
+</script>
 
 </body>
 </html>

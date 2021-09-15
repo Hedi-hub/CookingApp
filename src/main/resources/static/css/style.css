@@ -403,10 +403,16 @@ input[type="submit"]:hover{
 }
 .users-box{
     /*border:1px solid black;*/
+    display: inline-block;
     width:27%;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+}
+
+.users-box:nth-child(3n)::after {
+    content: "";
+    display: block;
 }
 
 .profile-pic{
@@ -416,7 +422,22 @@ input[type="submit"]:hover{
 
 }
 .badge{
+    width: fit-content;
+    padding: 5px;
 
+    margin: 0 auto;
+    border-radius: 5px;
+    color: white;
+
+}
+.newbie{
+    background-color: green;
+}
+.intermediate{
+    background-color: orange;
+}
+.advanced{
+    background-color: #007bff;
 }
 
 
