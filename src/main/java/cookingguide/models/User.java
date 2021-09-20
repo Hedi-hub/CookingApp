@@ -30,6 +30,9 @@ public class User implements UserDetails {
     private Badge badge;
     @Column(name="profile_image")
     private String imagePath;
+    @Column(name = "countOfRecipes")
+    private int recipeCount;
+
 
     public User(){
         this.accountNonExpired=true;
@@ -37,6 +40,7 @@ public class User implements UserDetails {
         this.credentialNonExpired=true;
         this.isEnabled=true;
         this.badge=Badge.NEWBIE;
+        this.recipeCount =0;
     }
 
     public User(String fullName, String username, String password, String location,String gender) {
@@ -55,6 +59,7 @@ public class User implements UserDetails {
         }else{
             this.imagePath = "/images/female-profile.png";
         }
+        this.recipeCount =0;
 
     }
     @OneToMany(
@@ -154,6 +159,14 @@ public class User implements UserDetails {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public void setRecipeCount(int recipeCount) {
+        this.recipeCount = recipeCount;
+    }
+
+    public int getRecipeCount() {
+        return recipeCount;
     }
 
     @Override

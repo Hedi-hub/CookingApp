@@ -19,6 +19,7 @@
 
     <img class="profile-pic" th:src="${user.imagePath}">
     <div class="profile-name" th:text="${user.fullName}"></div>
+    <div th:text =${user.recipeCount}></div>
     <div class="badge" th:text=" ${user.badge}"></div>
 
   </div>

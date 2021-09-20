@@ -3,8 +3,10 @@ package cookingguide.controllers;
 import cookingguide.models.Ingredient;
 import cookingguide.models.Recipe;
 import cookingguide.models.UnitOfMeasurements;
+import cookingguide.models.User;
 import cookingguide.services.IngredientService;
 import cookingguide.services.RecipeService;
+import cookingguide.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +25,9 @@ public class UserRecipeController {
 
     @Autowired
     private IngredientService ingredientService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/add-new-recipe")
     public String addNewRecipe(@RequestParam("recipeName") String recipeName,
@@ -52,8 +57,10 @@ public class UserRecipeController {
             ingredientService.saveIngredient(ingredient);
         }
 
-        
-
+        Authentication authenticationDetails = SecurityContextHolder.getContext().getAuthentication();
+        String username = authenticationDetails.getPrincipal().toString();
+        User user = userService.loadUserByUsername(username);
+        recipe.setUser(user);
         recipe.setIngredientList(ingredientList);
         recipeService.saveRecipe(recipe);
         
