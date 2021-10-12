@@ -37,7 +37,7 @@ public class Recipe {
     private List<Ingredient> ingredientList = new ArrayList<>();
 
     @ManyToOne()
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "rec_user_id", referencedColumnName = "user_id")
     private User user;
 
 

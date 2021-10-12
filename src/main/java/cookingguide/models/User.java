@@ -65,7 +65,7 @@ public class User implements UserDetails {
     @OneToMany(
             targetEntity=Recipe.class, mappedBy="user",
             fetch = FetchType.LAZY)
-    private List<Recipe> recipes = new ArrayList<>();
+    private Set<Recipe> recipes;
 
 
     @Transient
