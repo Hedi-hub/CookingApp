@@ -19,7 +19,7 @@
 
     <img class="profile-pic" th:src="${user.imagePath}">
     <div class="profile-name" th:text="${user.fullName}"></div>
-    <div th:text =${user.recipeCount}></div>
+    <a th:href="@{/getRecipesByUserId/{id}(id=${user.id})}" th:text="'View all recipes(' + ${user.recipeCount}+ ')'"></a>
     <div class="badge" th:text=" ${user.badge}"></div>
 
   </div>

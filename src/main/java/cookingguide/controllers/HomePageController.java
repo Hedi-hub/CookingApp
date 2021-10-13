@@ -23,8 +23,8 @@ public class HomePageController {
         List<Recipe> topThreeRecipes = new ArrayList<>();
         //these to see 3 recipes on the screen
         topThreeRecipes.add(allRecipes.get(0));
-//        topThreeRecipes.add(allRecipes.get(1));
-//        topThreeRecipes.add(allRecipes.get(2));
+        topThreeRecipes.add(allRecipes.get(1));
+        topThreeRecipes.add(allRecipes.get(2));
         model.addAttribute("recipes",topThreeRecipes );
         model.addAttribute("category","All Recipes");
 
