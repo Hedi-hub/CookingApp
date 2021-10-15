@@ -27,6 +27,7 @@ public class CommunityController {
         for (User user : users){
             int  userRecipeSize = recipeService.getRecipeCountByUsername(user.getUsername());
             user.setRecipeCount(userRecipeSize);
+            userService.saveUser(user);
         }
         return "community";
     }

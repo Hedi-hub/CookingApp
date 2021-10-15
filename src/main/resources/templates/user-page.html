@@ -12,13 +12,23 @@ thymeleaf to make dynamic ***always has to be here***-->
 
 <body>
 
-    <div th:replace="fragments/navbar::nav"></div>
+<div th:replace="fragments/navbar::nav"></div>
 
+<div class="user-container">
+    <div class="user-page-row">
+        <img th:src="${user.imagePath}">
+        <div class="user-info">
+            <div th:text="${user.fullName}"></div>
+            <div th:text="'Recipes: ' +${user.recipeCount}"></div>
+            <div th:text="${user.badge}"></div>
 
+        </div>
+    </div>
+</div>
 
-        <footer th:replace="fragments/footer :: footer">
+<footer th:replace="fragments/footer :: footer">
 
-        </footer>
+</footer>
 
-        </body>
-        </html>
+</body>
+</html>
