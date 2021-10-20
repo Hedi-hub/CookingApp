@@ -173,6 +173,14 @@ public class User implements UserDetails {
         return recipeCount;
     }
 
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

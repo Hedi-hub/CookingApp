@@ -10,7 +10,7 @@ thymeleaf to make dynamic ***always has to be here***-->
     <title>Cooking Guide App</title>
 </head>
 
-<body>
+<body onload="addColorClassDynamically();">
 
 <div th:replace="fragments/navbar::nav"></div>
 
@@ -20,7 +20,13 @@ thymeleaf to make dynamic ***always has to be here***-->
         <div class="user-info">
             <div th:text="${user.fullName}"></div>
             <div th:text="'Recipes: ' +${user.recipeCount}"></div>
-            <div th:text="${user.badge}"></div>
+            <div class="badge badge-userPage" th:text="${user.badge}"></div>
+
+        </div>
+    </div>
+    <div class="user-recipe-wrap">
+        <div th:each="recipe : ${user.recipes}">
+            <a class="recipe-link" th:href="@{/getRecipeById/{id}(id = ${recipe.id})}" th:text="${recipe.name}"></a>
 
         </div>
     </div>
@@ -29,6 +35,24 @@ thymeleaf to make dynamic ***always has to be here***-->
 <footer th:replace="fragments/footer :: footer">
 
 </footer>
+
+<script>
+    function addColorClassDynamically() {
+        var items = document.getElementsByClassName("badge");
+        for (var i = 0; i < items.length; i++) {
+            var itemText = items[i].innerHTML;
+            if (itemText == "Newbie") {
+                items[i].classList.add("newbie");
+            }
+            if (itemText == "Intermediate") {
+                items[i].classList.add("intermediate");
+            }
+            if (itemText == "Advanced") {
+                items[i].classList.add("advanced");
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
