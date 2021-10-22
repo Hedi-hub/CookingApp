@@ -464,7 +464,7 @@ input[type="submit"]:hover{
     flex-direction: row;
     margin: 0 auto;
     justify-content: space-around;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 .badge-userPage{
     margin: 0;
@@ -472,11 +472,20 @@ input[type="submit"]:hover{
 .user-recipe-wrap{
     width: 50%;
     margin: 0 auto;
-
+}
+.user-recipe-wrap:hover{
+    cursor: pointer;
 }
 .recipe-link{
     text-decoration: none;
-    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+
+}
+.recipe-wrap{
+    margin:20px 0;
+    background-color:#ffebcc ;
+    padding: 10px;
 }
 
 

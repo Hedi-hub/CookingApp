@@ -25,7 +25,7 @@ thymeleaf to make dynamic ***always has to be here***-->
         </div>
     </div>
     <div class="user-recipe-wrap">
-        <div th:each="recipe : ${user.recipes}">
+        <div class= "recipe-wrap" th:each="recipe : ${user.recipes}">
             <a class="recipe-link" th:href="@{/getRecipeById/{id}(id = ${recipe.id})}" th:text="${recipe.name}"></a>
 
         </div>

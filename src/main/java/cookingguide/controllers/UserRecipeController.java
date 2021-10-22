@@ -76,4 +76,15 @@ public class UserRecipeController {
         return"user-page";
     }
 
+    @RequestMapping("/getCurrentUserRecipes")
+    public String getCurrentUserRecipes(Model model){
+        String currentUserUsername = SecurityContextHolder.getContext().getAuthentication().getName();
+        User currentUser = userService.loadUserByUsername(currentUserUsername);
+        List<Recipe> allRecipesForCurrentUser = recipeService.getRecipeByUsername(currentUserUsername);
+        currentUser.setRecipeCount(allRecipesForCurrentUser.size());
+        model.addAttribute("user" , currentUser);
+        return "user-page";
+
+    }
+
 }
