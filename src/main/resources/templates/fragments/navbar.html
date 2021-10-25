@@ -37,8 +37,8 @@
         </div>
 
         <div class="search-wrap">
-            <form action="">
-                <input type="text" class="search-bar" placeholder="e.g. Steak, Sushi, ..."/>
+            <form th:action="@{/searchForRecipe}">
+                <input type="text" class="search-bar" name="searchTerm" placeholder="e.g. Steak, Sushi, ..."/>
                 <button class="search-button" type="submit">
                     <i class="fas fa-search"></i>
                 </button>

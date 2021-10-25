@@ -1,5 +1,6 @@
 package cookingguide.controllers;
 
+import cookingguide.models.Ingredient;
 import cookingguide.models.Recipe;
 import cookingguide.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 public class HomePageController {
@@ -50,6 +53,30 @@ public class HomePageController {
         }
         model.addAttribute("recipes",recipesByCategory);
         model.addAttribute("category", category);
+
+        return "index";
+    }
+
+    @RequestMapping("/searchForRecipe")
+    public String searchForRecipe(@RequestParam("searchTerm") String searchKeyword, Model model){
+        List<Recipe> allRecipes = recipeService.getAllRecipes();
+        List<Recipe> selectedRecipes = new ArrayList<>();
+        if (searchKeyword.isEmpty()){
+            model.addAttribute("recipes", allRecipes);
+            return "index";
+        }
+        for (Recipe recipe: allRecipes){
+            if (recipe.getName().toLowerCase().contains(searchKeyword.toLowerCase())){
+                selectedRecipes.add(recipe);
+            }
+            List<Ingredient> allRecipeIngredients =recipe.getIngredientList();
+            for (Ingredient ingredient: allRecipeIngredients){
+                if(ingredient.getIngredientName().toLowerCase().contains(searchKeyword.toLowerCase())){
+                    selectedRecipes.add(recipe);
+                }
+            }
+        }
+        model.addAttribute("recipes", selectedRecipes);
 
         return "index";
     }
